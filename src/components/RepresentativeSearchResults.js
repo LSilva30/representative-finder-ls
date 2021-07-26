@@ -23,6 +23,8 @@ function RepresentativeSearchResults(props) {
                 &nbsp;{address?.zip}
               </span>
             </label>
+            <br/>
+            {official?.emails && <label>Email:&nbsp;<span>{official?.emails[0]}</span></label>}
           </div>
         )
       })}
