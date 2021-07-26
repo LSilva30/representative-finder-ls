@@ -34,10 +34,12 @@ function RepresentativeSearchResults(props) {
               </label>
             )}
             <br/>
+            {official?.urls && (
             <label>
                 <strong>Website:&nbsp;</strong>
                 <a href={official?.urls[0]} target="_blank">{official?.urls[0]}</a>
             </label>
+            )}
           </div>
          )}
         )}
