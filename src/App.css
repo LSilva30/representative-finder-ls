@@ -24,3 +24,12 @@
   font-size: 16px;
   border-style: none;
 }
+
+.representative-info {
+  margin: 18px 0;
+}
+
+.office-title {
+  font-weight: bold;
+  text-transform: uppercase;
+}
