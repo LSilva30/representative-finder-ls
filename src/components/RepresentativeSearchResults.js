@@ -5,26 +5,34 @@ function RepresentativeSearchResults(props) {
     <div>
       {offices.map(office => {
         const official = officials[office.officialIndices[0]]
-        const address = official?.address && official?.address[0]
+
         return (
           <div className="representative-info">
             <div className="office-title">{office.name}</div>
             <p>{official?.name}</p>
             <label>
-              Phone:&nbsp;<span>{official?.phones[0]}</span>
+              <strong>Phone:&nbsp;</strong>
+              <a href={`tel:${official?.phones[0]}`}>{official?.phones[0]}</a>
             </label>
             <br />
-            <label>
-              Address:&nbsp;
-              <span>
-                {address?.line1}, 
-                &nbsp;{address?.city},
-                &nbsp;{address?.state}, 
-                &nbsp;{address?.zip}
-              </span>
-            </label>
-            <br/>
-            {official?.emails && <label>Email:&nbsp;<span>{official?.emails[0]}</span></label>}
+            {official?.address && (
+              <label>
+                <strong>Address:&nbsp;</strong>
+                <span>
+                  {official?.address[0].line1}, 
+                  &nbsp;{official?.address[0]?.city}, 
+                  &nbsp;{official?.address[0]?.state}, 
+                  &nbsp;{official?.address[0]?.zip}
+                </span>
+              </label>
+            )}
+            <br />
+            {official?.emails && (
+              <label>
+                <strong>Email:&nbsp;</strong>
+                <a href={`mailto:${official?.emails[0]}`}>{official?.emails[0]}</a>
+              </label>
+            )}
           </div>
         )
       })}
