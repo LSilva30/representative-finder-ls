@@ -1,6 +1,6 @@
 function Footer() {
     return (
-    <p className="footer">Footer</p>
+    <p className="footer"> &copy; Luiz Silva</p>
     )
 }
 

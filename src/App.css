@@ -5,3 +5,12 @@
 .footer {
   text-align: center;
 }
+
+.search-container {
+  text-align: center;
+}
+
+.search-bar {
+  width: 750px;
+  height: 50px;
+}
