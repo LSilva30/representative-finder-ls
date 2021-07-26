@@ -1,6 +1,13 @@
-function RepresentativeSearchResults() {
+function RepresentativeSearchResults(props) {
+
+    const {offices, officials} =props;
+
     return (
-        <div>RepresentativeSearchResults</div>
+        <div>
+            {offices.map(office => 
+                <div>{office.name}</div>
+            )}
+        </div>
     )
 }
 

@@ -36,7 +36,7 @@ function RepresentativeSearch() {
                 Submit
           </button>
         </div>
-      <RepresentativeSearchResults />
+      <RepresentativeSearchResults offices={offices} officials={officials} />
     </div>
   )
 }
