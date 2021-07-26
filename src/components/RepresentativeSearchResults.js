@@ -33,9 +33,14 @@ function RepresentativeSearchResults(props) {
                 <a href={`mailto:${official?.emails[0]}`}>{official?.emails[0]}</a>
               </label>
             )}
+            <br/>
+            <label>
+                <strong>Website:&nbsp;</strong>
+                <a href={official?.urls[0]} target="_blank">{official?.urls[0]}</a>
+            </label>
           </div>
-        )
-      })}
+         )}
+        )}
     </div>
   )
 }
