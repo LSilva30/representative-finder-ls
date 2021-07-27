@@ -4,9 +4,15 @@ function SignUp() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
+    const signUpUser = (event) => {
+        event.preventDefault()
+        console.log("signing up...")
+    }
+
     return (
         <div className="sign-up-container">
-          <form>
+          <h1>Sign Up</h1>
+          <form onSubmit={(event) => signUpUser(event)}>
               <label className="form-label">
                   <strong>Email:&nbsp;</strong>
                   <input 
@@ -28,8 +34,10 @@ function SignUp() {
                     onChange={event => setPassword(event.target.value)}
                   />
               </label>
+              <br />
               <button
                 className="submit-btn"
+                type="submit"
               >
                   SUBMIT
               </button>

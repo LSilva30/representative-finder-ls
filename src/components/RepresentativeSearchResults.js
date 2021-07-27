@@ -37,7 +37,7 @@ function RepresentativeSearchResults(props) {
             {official?.urls && (
             <label>
                 <strong>Website:&nbsp;</strong>
-                <a href={official?.urls[0]} target="_blank">{official?.urls[0]}</a>
+                <a href={official?.urls[0]} target="_blank" rel="noreferrer">{official?.urls[0]}</a>
             </label>
             )}
           </div>

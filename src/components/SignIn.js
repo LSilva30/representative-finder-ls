@@ -11,6 +11,7 @@ function SignIn() {
 
     return (
         <div className="sign-up-container">
+          <h1>Sign In</h1>
           <form onSubmit={(event) => signInUser(event)}>
               <label className="form-label">
                   <strong>Email:&nbsp;</strong>
@@ -33,6 +34,7 @@ function SignIn() {
                     onChange={event => setPassword(event.target.value)}
                   />
               </label>
+              <br />
               <button
                 className="submit-btn"
                 type="submit"

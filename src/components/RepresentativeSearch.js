@@ -21,6 +21,8 @@ function RepresentativeSearch() {
 
   return (
     <div className="search-container">
+      <h1>Search For Representatives By Your Address</h1>
+      <br />
       <p>Address <span style={{color: "red"}}>(*Required)</span></p>
       <input 
       name="addressSearch" 
