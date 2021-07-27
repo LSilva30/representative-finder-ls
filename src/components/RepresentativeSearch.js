@@ -21,6 +21,7 @@ function RepresentativeSearch() {
 
   return (
     <div className="search-container">
+      <p>Address <span style={{color: "red"}}>(*Required)</span></p>
       <input 
       name="addressSearch" 
       type="text" 
@@ -30,10 +31,10 @@ function RepresentativeSearch() {
       />
         <div>
           <button 
-            className="search-btn"
+            className="submit-btn"
             onClick={() => searchRepresentatives()}
             >
-                Submit
+                SUBMIT
           </button>
         </div>
       <RepresentativeSearchResults offices={offices} officials={officials} />
