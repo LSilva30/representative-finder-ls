@@ -1,5 +1,5 @@
+import { useState } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-// import Logo from './components/Logo'
 import RepresentativeSearch from './components/RepresentativeSearch'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -9,20 +9,23 @@ import Home from './components/Home'
 import './App.css'
 
 function App() {
+  const [user, setUser] = useState()
   return (
     <Router>
       <div>
-        {/* <Logo /> */}
         <Header />
           <Switch>
             <Route path="/signin">
-              <SignIn />
+              <SignIn setUser={setUser} />
             </Route>
             <Route path="/signup">
-              <SignUp />
+              <SignUp setUser={setUser} />
             </Route>
             <Route path="/search">
-              <RepresentativeSearch />
+              {user
+              ?<RepresentativeSearch user={user} />
+              :<SignIn setUser={setUser} />
+              }
             </Route>
             <Route path="/">
               <Home />
