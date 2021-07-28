@@ -1,6 +1,17 @@
 import {Link} from 'react-router-dom'
+import firebase from 'firebase/app'
+import 'firebase/auth'
 
-function Header() {
+function Header({setUser}) {
+
+  const logOut = (event) => {
+    event.preventDefault()
+    firebase.auth()
+      .signOut()
+      .then(() => setUser(undefined))
+      .catch(error => alert(error))
+  }
+
   return (
     <div className="header">
       <ul>
@@ -11,22 +22,27 @@ function Header() {
         </li>
         <li className="menu-item">
           <Link to="/search">
-            <span>Search</span>
+            Search
           </Link>
         </li>
         <li className="menu-item">
           <Link to="/signup">
-            <span>Sign Up</span>
+            Sign Up
           </Link>
         </li>
         <li className="menu-item">
           <Link to="/signin">
-            <span>Sign In</span>
+            Sign In
           </Link>
         </li>
         <li className="menu-item">
+          <a onClick={(event) => logOut(event)}>
+            Sign Out
+          </a>
+        </li>
+        <li className="menu-item">
           <Link to="/user-profile">
-            <span>User Profile</span>
+            User Profile
           </Link>
         </li>
       </ul>
