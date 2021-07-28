@@ -6,6 +6,7 @@ import Footer from './components/Footer'
 import SignUp from './components/SignUp'
 import SignIn from './components/SignIn'
 import Home from './components/Home'
+import UserProfile from './components/UserProfile'
 import './App.css'
 
 function App() {
@@ -26,6 +27,9 @@ function App() {
               ?<RepresentativeSearch user={user} />
               :<SignIn setUser={setUser} />
               }
+            </Route>
+            <Route path="/user-profile">
+              <UserProfile />
             </Route>
             <Route path="/">
               <Home />
