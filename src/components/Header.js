@@ -2,13 +2,17 @@ import {Link} from 'react-router-dom'
 import firebase from 'firebase/app'
 import 'firebase/auth'
 
-function Header({setUser}) {
+function Header({setUser, setUserProfile}) {
 
   const logOut = (event) => {
     event.preventDefault()
     firebase.auth()
       .signOut()
-      .then(() => setUser(undefined))
+      .then(() => {
+        localStorage.removeItem('user')
+        setUser(undefined)
+        setUserProfile(undefined)
+      })
       .catch(error => alert(error))
   }
 
