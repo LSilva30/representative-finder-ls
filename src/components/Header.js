@@ -1,8 +1,9 @@
 import {Link} from 'react-router-dom'
 import firebase from 'firebase/app'
 import 'firebase/auth'
+import UserProfile from './UserProfile'
 
-function Header({setUser, setUserProfile}) {
+function Header({ user, userProfile, setUser, setUserProfile }) {
 
   const logOut = (event) => {
     event.preventDefault()
@@ -29,26 +30,30 @@ function Header({setUser, setUserProfile}) {
             Search
           </Link>
         </li>
-        <li className="menu-item">
+       {!user && 
+       <li className="menu-item">
           <Link to="/signup">
             Sign Up
           </Link>
-        </li>
+        </li>}
+        {!user &&
         <li className="menu-item">
           <Link to="/signin">
             Sign In
           </Link>
-        </li>
+        </li>}
+        {user &&
         <li className="menu-item">
           <a onClick={(event) => logOut(event)}>
             Sign Out
           </a>
-        </li>
+        </li>}
+        {user && userProfile &&
         <li className="menu-item">
           <Link to="/user-profile">
             User Profile
           </Link>
-        </li>
+        </li>}
       </ul>
     </div>
   )

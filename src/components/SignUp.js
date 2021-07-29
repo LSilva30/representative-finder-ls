@@ -8,6 +8,21 @@ function SignUp({ setUser }) {
     const [password, setPassword] = useState("")
     const [loading, setLoading] = useState(false)
 
+    const createUser = () => {
+      const formValues = {
+          email: email
+      }
+      
+      fetch('https://representative-finder-mb-api.web.app/users', {
+          method: 'POST',
+          body: JSON.stringify(formValues),
+          headers: {"Content-type": "application/json; charset=UTF-8"},
+          
+      }).then(response => response.json())
+          .then(json => console.log('json -->', json))
+          .catch(error => alert(error))
+  }
+
     const signUpUser = (event) => {
         event.preventDefault()
         setLoading(true)
@@ -19,6 +34,7 @@ function SignUp({ setUser }) {
           .then(response => {
             setLoading(false)
             setUser(response.user)
+            createUser()
           })
           .catch(err => {
             alert(err.message)
